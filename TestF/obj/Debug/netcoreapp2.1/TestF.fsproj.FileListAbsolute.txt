@@ -1,0 +1,10 @@
+C:\Users\lvalderrama\Documents\TestF\TestF\bin\Debug\netcoreapp2.1\TestF.deps.json
+C:\Users\lvalderrama\Documents\TestF\TestF\bin\Debug\netcoreapp2.1\TestF.runtimeconfig.json
+C:\Users\lvalderrama\Documents\TestF\TestF\bin\Debug\netcoreapp2.1\TestF.runtimeconfig.dev.json
+C:\Users\lvalderrama\Documents\TestF\TestF\bin\Debug\netcoreapp2.1\TestF.dll
+C:\Users\lvalderrama\Documents\TestF\TestF\obj\Debug\netcoreapp2.1\TestF.fsprojAssemblyReference.cache
+C:\Users\lvalderrama\Documents\TestF\TestF\obj\Debug\netcoreapp2.1\TestF.AssemblyInfoInputs.cache
+C:\Users\lvalderrama\Documents\TestF\TestF\obj\Debug\netcoreapp2.1\TestF.AssemblyInfo.fs
+C:\Users\lvalderrama\Documents\TestF\TestF\bin\Debug\netcoreapp2.1\TestF.pdb
+C:\Users\lvalderrama\Documents\TestF\TestF\obj\Debug\netcoreapp2.1\TestF.dll
+C:\Users\lvalderrama\Documents\TestF\TestF\obj\Debug\netcoreapp2.1\TestF.pdb
