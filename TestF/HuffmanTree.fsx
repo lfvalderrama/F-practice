@@ -93,22 +93,19 @@ let quickEncode (tree: CodeTree) (text: List<char>): List<bit> =
 
 let decode (tree: CodeTree)(bits: List<bit>) : List<char> = 
     let rec loop (internalTree: CodeTree)(bits: List<bit>)(acc: List<char>) : List<char> =
-        if List.length bits = 0 then 
             match internalTree with
                 | Leaf (c,_) when List.length bits = 0 ->  acc @ [c]
-                | _ -> acc            
-        else
-            match internalTree with
-                | Leaf (c,_) -> let acc = acc @ [c]
-                                loop tree bits acc
-                | Fork (l,r,_,_) -> if bits.Head = 0 then loop l bits.Tail acc else loop r bits.Tail acc
+                | Leaf (c,_) when List.length bits > 0 -> let acc = acc @ [c]
+                                                          loop tree bits acc
+                | Fork (l,r,_,_) when List.length bits > 0 -> if bits.Head = 0 then loop l bits.Tail acc else loop r bits.Tail acc
+                | _ -> acc  
     loop tree bits []
 
 
 let sampleTree = makeCodeTree (makeCodeTree ( Leaf ('x', 1) ) (Leaf ('e', 1))) (Leaf ('t', 2))
 let wordArray = toCharList "asdasdiahsodinaosidnasiod"
 let tree1 = createCodeTree wordArray
-let wordArray2 = toCharList "h"
+let wordArray2 = toCharList "hasdasdas"
 encode tree1 wordArray2
 let encoded = quickEncode tree1 wordArray2
 decode tree1 encoded
