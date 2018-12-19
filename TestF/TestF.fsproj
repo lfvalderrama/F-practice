@@ -6,10 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="File1.fs" />
-    <None Include="Script3.fsx" />
-    <None Include="Script2.fsx" />
-    <None Include="Script1.fsx" />
+    <None Include="set.fsx" />
+    <Compile Include="FSCheck.fs" />
+    <None Include="CourseraLecture2.fsx" />
+    <None Include="exampleFile.fsx" />
+    <None Include="PracticeFile.fsx" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

@@ -1,6 +1,4 @@
-﻿open System.Runtime.Remoting.Metadata.W3cXsd2001
-
-type set = int -> bool 
+﻿type set = int -> bool 
 
 let contains (s:set) (x:int) = s x
 

@@ -110,6 +110,7 @@ let figure4 = Composed (figure3,figure3)
 
 
 open System
+open System.Numerics
 
 let figuresTest figure =
     match figure with
@@ -139,3 +140,89 @@ let GenerateTuples (n:int) =
     [for i in 1..n do for j in 1..n do if i <> j then yield (i,j)]
 
 GenerateTuples 5
+
+(*
+type IntSet() =
+    abstract member incl: int -> IntSet
+    abstract member contains: int -> bool
+
+type NonEmpty (elem: int, left: IntSet, right: IntSet)  =
+    inherit IntSet()
+    override __.incl (x: int): IntSet = 
+        if x < elem then NonEmpty (elem, (left incl x), right) 
+        elif x > elem then NonEmpty (elem, left, (right incl x))
+        else __
+
+    override __.contains (x: int): bool =
+        if x < elem then left contains x
+
+type Empty =
+    interface IntSet with    
+        member __.contains (x: int): bool = 
+        member __.incl (x: int): IntSet = NonEmpty x Empty Empty
+
+*)
+
+
+
+let sqrt(x: double) = 
+    let isGoodEnough (guess:double) =
+        abs(guess * guess - x ) / x < 0.00001
+
+    let improve (guess: double)  =
+        (guess + x / guess)/2.0
+
+    let rec sqrtIter (guess: double) : double =
+        if isGoodEnough guess then guess else improve guess |> sqrtIter 
+
+    sqrtIter 1.0 
+    
+sqrt(2.0)
+sqrt(4.0)
+sqrt(1e-6)
+sqrt(1e60)
+
+let rec fact (n:int) =
+    let rec loop (n:int) (acc: bigint) =
+        if n = 1 then acc else loop (n-1) (acc* bigint n)
+    loop n (bigint 1)
+
+fact 60
+
+type Expr =
+    |Number of int
+    |Sum of Expr * Expr
+    |Prod of Expr * Expr
+    |Var of string
+
+(*let rec eval(e: Expr): int = 
+    match e with 
+        | Number n -> n
+        | Sum (e1,e2) -> eval e1 + eval e2
+        | Prod (e1,e2) -> eval e1 * eval e2
+        | 
+        *)
+
+let rec show (e:Expr) : string =
+    let parentize (e: Expr) : string =
+        match e with 
+            | Var v -> v
+            | Number n -> n.ToString()
+            | _ -> "(" + show e + ")"
+
+    match e with    
+        | Number n -> n.ToString()
+        | Sum (e1, e2) -> show e1 + " + "+ show e2
+        | Prod (e1,e2) -> parentize e1 + " * " + parentize e2
+        | Var v -> v
+
+
+ 
+let sum1 = Prod(Sum(Number 2, Var("x")), Var("y"))
+//eval sum1
+show sum1
+
+let rec times (chars: List<char>) =        
+        (chars |> List.filter (fun x -> x = chars.Head)  |> List.length )
+
+times ['a';'a';'b']
