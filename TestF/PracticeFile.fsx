@@ -226,3 +226,11 @@ let rec times (chars: List<char>) =
         (chars |> List.filter (fun x -> x = chars.Head)  |> List.length )
 
 times ['a';'a';'b']
+
+
+let split3 s = List.fold (fun (xs, ys) e -> (e::ys, xs))  ([], []) s
+let l = [1..10]
+split3 l
+
+List.collect (fun x -> x) [[2;3;2;5];[3]]
+List.concat [[2;3;2;5];[3]]
