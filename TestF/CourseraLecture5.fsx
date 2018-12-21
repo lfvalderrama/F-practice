@@ -5,17 +5,19 @@
 
 removeAt 1 ['a';'b';'c';'d']
 
-(* Al parecer la inferencia de tipos no me deja hacer esto manual, no con lo que se al menos, una lsita de lsitas, se peude con List.concat.
+(* Al parecer la inferencia de tipos no me deja hacer esto manual, no con lo que se al menos, una lsita de lsitas, se peude con List.concat. 
 
-let rec flatten xs: List<'a> =
+let rec flatten (xs: List<'a>): List<'a> =
         match xs with            
             | [] -> []            
-            | (x: List<'a>) :: xs -> flatten x @ flatten xs            
+            | (x: List<'b>) :: xs -> match x with 
+                                        | y::ys -> flatten x @ flatten xs            
             | (x: 'a) :: xs -> x :: flatten xs.Tail
-         
+   
          
 
-flatten [[1;2;3];[1;2];[1];[]]  *)
+flatten [[1;2;3];[1;2];[1];[]]  
+*)
 
 let rec pack (xs: List<'a>): List<List<'a>> =
     match xs with 

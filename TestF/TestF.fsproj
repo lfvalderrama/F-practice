@@ -6,7 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="CourseraLecture3.fsx" />
+    <None Include="CourseraLecture6.fsx" />
+    <None Include="CourseraLecture5.fsx" />
     <None Include="HuffmanTree.fsx" />
     <None Include="set.fsx" />
     <Compile Include="FSCheck.fs" />
