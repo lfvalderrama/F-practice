@@ -37,4 +37,4 @@ encode [1; 1; 1; 2; 2; 2; 3; 3; 1]
 lenghtFun [1..2..100]
 
 List.fold (fun acc x -> x+acc) 0 [1;2]
-List.fold (fun acc x -> x*acc) 1 [1..100]
+List.fold (fun acc x -> x*acc) 1 [1..10]
