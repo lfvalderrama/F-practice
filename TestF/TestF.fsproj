@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="linuxwords.txt" />
+    <None Include="Anagrams.fsx" />
     <None Include="CourseraLecture6.fsx" />
     <None Include="CourseraLecture5.fsx" />
     <None Include="HuffmanTree.fsx" />
@@ -16,6 +18,8 @@
     <None Include="PracticeFile.fsx" />
     <Compile Include="Program.fs" />
   </ItemGroup>
+
+  <ItemGroup />
 
   <ItemGroup>
     <PackageReference Include="FsCheck" Version="2.13.0" />

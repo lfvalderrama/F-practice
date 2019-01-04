@@ -239,6 +239,6 @@ let pairs = [(2, 1); (3, 2); (4, 1); (4, 3); (5, 2); (6, 1); (6, 5)]
 
 seq {
     for p in pairs do  yield snd p
- }
+ } |> Seq.toList
 
 pairs |> Map
